@@ -67,6 +67,46 @@ header {
   padding: 10px;
 }
 
+#login {
+  text-align: center;
+  width: 70px;
+}
+
+#login a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+
+
+#register {
+  text-align: center;
+  width: 70px;
+}
+
+#register a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+
+
+
+
+
+
+
+.header-social  #register{
+  display: flex;
+  align-items: baseline;
+  width: 70px;
+  margin-left: 5px;
+}
+
 /* NAVBAR */
 nav {
   width: 1080px;
