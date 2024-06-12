@@ -16,3 +16,7 @@ const Onsale=products.filter((products)=>products.onsale===true)
 printProducts(Onsale,"product-container")
 
 
+isOnline(false)
+const getStateValue=JSON.parse(localStorage.getItem("usuario"))||[]
+isOnline(getStateValue.state,getStateValue.nombre)
+

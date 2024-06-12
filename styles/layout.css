@@ -95,7 +95,40 @@ header {
 
 
 
+#micuenta{
+  width: 150px;
+ 
+}
 
+#micuenta a{
+  width: 150px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+
+}
+
+#micuenta p{
+  width: 150px;
+  text-align: center;
+  font-size: medium;
+}
+
+
+
+
+
+#logout a{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+#logout img{
+  filter: brightness(0) invert(1);
+  height: 45px;
+  width: 45px;
+}
 
 
 

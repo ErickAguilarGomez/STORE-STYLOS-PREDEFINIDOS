@@ -14,6 +14,5 @@ function printLogin(palabra, id) {
 }
 
 
-
 printLogin("Iniciar Sesion", "container");
 iniciarSesion();

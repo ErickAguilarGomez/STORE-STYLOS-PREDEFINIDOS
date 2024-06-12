@@ -17,7 +17,7 @@ function printLinks(){
       />
     </a>
   </li>
-  <li id="cart" class="header-li">
+  <li id="cart" class="header-li id="carrito">
     <a class="header-a" href="./cart.html">
       <img
         class="header-social-img"
@@ -29,15 +29,35 @@ function printLinks(){
   
   <li id="login" class="header-li">
   <a class="header-a" href="./login.html">
-    <p>Iniciar</p>
+    <p id="iniciar-contenido">Iniciar</p>
   </a>
 </li>
 
 <li id="register" class="header-li">
   <a class="header-a" href="./registro.html">
-    <p>registrate</p>
+    <p id="register-contenido">registrate</p>
   </a>
-</li>  
+</li>
+
+
+
+<li id="micuenta" class="header-li">
+<a class="header-a" href="./registro.html">
+  <p class="micuenta-usuario">Usuario</p>
+</a>
+</li>
+
+
+
+<li id="logout" class="header-li">
+  <a class="header-a" href="./index.html">
+  <img
+  class="header-social-img"
+  src="https://img.icons8.com/?size=100&id=2445&format=png&color=000000">
+  </a>
+</li>
+
+
   
   `
   social.innerHTML=template
