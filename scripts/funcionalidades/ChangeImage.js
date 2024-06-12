@@ -3,7 +3,6 @@ function changeImage(event) {
     const src = event.target.src;
     const bigImage = document.querySelector("#big-img");
     bigImage.src = src;
-    console.log(bigImage.src+"hola desde changeimage");
 }
 
 
