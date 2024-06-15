@@ -23,16 +23,17 @@ async function fetchProducts() {
   }
 }
 
-var parametrosURL = new URLSearchParams(window.location.search); // LOCALIZA LA URL
-  var valorID = parametrosURL.get("id"); // Obtiene el valor del parámetro "id"
+// Obtiene el valor del parámetro "id"
+
 
 function runFunctions() {
   printLayout(); // IMPRIME EL NAVBAR
   printLinks(); // IMPRIME LAS REDES SOCIALES
   printFooter(); // IMPRIME EL PIE DE PÁGINA
 
-  
 
+  var parametrosURL = new URLSearchParams(window.location.search); // LOCALIZA LA URL
+  var valorID = parametrosURL.get("id"); 
   prinDetails(valorID); // AL HACER CLICK EN ALGÚN PRODUCTO TE REDIRIGE A LA PÁGINA DE ESE PRODUCTO, DEPENDIENDO DEL ID
 
   const littleImgs = document.querySelectorAll(".mini-img"); // SELECCIONA TODOS LOS NODOS QUE TENGAN MINI-IMAGE
@@ -42,6 +43,9 @@ function runFunctions() {
 
 
   precioTotal(valorID);
+  
+  const addcarrito = document.querySelector(".cart-btn");
+  addcarrito.addEventListener("click", () => { addCart(valorID, products)});
 
   const Onsale = products.filter((product) => product.onsale === true);
   printProducts(Onsale, "product-container");
@@ -54,5 +58,3 @@ function runFunctions() {
 // Llama a la función para cargar los productos y luego ejecutar las demás funciones
 fetchProducts();
 
-const addcarrito = document.querySelector(".cart-btn");
-addcarrito.addEventListener("click", addCart(valorID, products));

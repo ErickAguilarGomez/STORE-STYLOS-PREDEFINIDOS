@@ -1,23 +1,8 @@
 
 
 
-let products;
-
-async function fetchProducts() {
-  try {
-    const response = await fetch("../../productos/productos.json");
-    const data = await response.json();
-    products = data.productos;
-    runFunctions();
-  } catch (error) {
-    console.error("Error fetching productos:", error);
-  }
-}
-
-
-
-
 export default function addCart(valorID, products) {
+  console.log(products)
   // Añadimos valorID y products como parámetros
   const find = products.find((item) => item.id == valorID);
 
