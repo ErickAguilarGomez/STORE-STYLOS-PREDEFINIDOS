@@ -1,22 +1,58 @@
-printLayout() //IMPRIME EL NAVBAR
-printLinks() //IMPRIME EL REDES SOCIALES 
-printFooter()//IMPRIME EL EL PIE DE PAGINA
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    ///////////////////////////////////////////
-var parametrosURL = new URLSearchParams(window.location.search); //LOCALIZA LA URL
-var valorID = parametrosURL.get("id");// Obtiene el valor del parámetro "id"
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    ///////////////////////////////////////////
-prinDetails(valorID)// AL HACER CLICK EN ALGUN PRODUCTO TE REDIRIGE A LA PAGINA DE ESE PRODUCTO,DEPENDIENDO EL ID
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    ///////////////////////////////////////////
-const littleImgs = document.querySelectorAll(".mini-img"); //SELECCIONA TODOS LOS NODOS QUE TENGAN MINI-IMAGE
-littleImgs.forEach(img => {img.addEventListener("click", changeImage);}); //A CADA MODULO O ELEMENTO EN HTML LE AÑADE UN EVENTO
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    ///////////////////////////////////////////
-precioTotal(valorID) //
+import printLayout from "./funcionalidades/printLayout.js";
+import options from "./funcionalidades/options.js";
+import printLinks from "./funcionalidades/printLinks.js";
+import prinDetails from "./funcionalidades/printDetails.js";
+import printFooter from "./funcionalidades/printFooter.js";
+import ChangeImage from "./funcionalidades/ChangeImage.js";
+import precioTotal from "./funcionalidades/prinTotal.js";
+import addCart from "./funcionalidades/addCart.js";
+import isOnline from "./funcionalidades/isOnline.js";
+import logoutUser from "./funcionalidades/isOnline.js";
+import printProducts from "./funcionalidades/printProducts.js";
 
-const Onsale=products.filter((products)=>products.onsale===true)
-printProducts(Onsale,"product-container")
+let products;
+
+async function fetchProducts() {
+  try {
+    const response = await fetch("../../productos/productos.json");
+    const data = await response.json();
+    products = data.productos;
+    runFunctions();
+  } catch (error) {
+    console.error("Error fetching productos:", error);
+  }
+}
+
+var parametrosURL = new URLSearchParams(window.location.search); // LOCALIZA LA URL
+  var valorID = parametrosURL.get("id"); // Obtiene el valor del parámetro "id"
+
+function runFunctions() {
+  printLayout(); // IMPRIME EL NAVBAR
+  printLinks(); // IMPRIME LAS REDES SOCIALES
+  printFooter(); // IMPRIME EL PIE DE PÁGINA
+
+  
+
+  prinDetails(valorID); // AL HACER CLICK EN ALGÚN PRODUCTO TE REDIRIGE A LA PÁGINA DE ESE PRODUCTO, DEPENDIENDO DEL ID
+
+  const littleImgs = document.querySelectorAll(".mini-img"); // SELECCIONA TODOS LOS NODOS QUE TENGAN MINI-IMAGE
+  littleImgs.forEach((img) => {
+    img.addEventListener("click", ChangeImage);
+  }); // A CADA ELEMENTO EN HTML LE AÑADE UN EVENTO
 
 
-isOnline(false)
-const getStateValue=JSON.parse(localStorage.getItem("usuario"))||[]
-isOnline(getStateValue.state,getStateValue.nombre)
+  precioTotal(valorID);
 
+  const Onsale = products.filter((product) => product.onsale === true);
+  printProducts(Onsale, "product-container");
+
+  isOnline(false);
+  const getStateValue = JSON.parse(localStorage.getItem("usuario")) || [];
+  isOnline(getStateValue.state, getStateValue.nombre);
+}
+
+// Llama a la función para cargar los productos y luego ejecutar las demás funciones
+fetchProducts();
+
+const addcarrito = document.querySelector(".cart-btn");
+addcarrito.addEventListener("click", addCart(valorID, products));

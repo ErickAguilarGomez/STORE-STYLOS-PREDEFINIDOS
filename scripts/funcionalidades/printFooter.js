@@ -1,5 +1,7 @@
 /* IMPRIME EL FOOTER */
-function printFooter() {
+import options from "./options.js";
+
+export default function printFooter() {
   let template = ``;
   const footer = document.querySelector("#footer");
   options.forEach((item) => {

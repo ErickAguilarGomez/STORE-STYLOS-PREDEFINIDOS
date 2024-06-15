@@ -1,5 +1,5 @@
 //AQUI SE IMPRIMEN EL PRECIO TOTAL DE LOS PRODUCTOS UNA VEZ AÑADIDOS AL CARRITO
-function totalPrice(precio){
+export default function totalPrice(precio){
     let template2=` <div id="contenedor-total">
     <h1>Total a Pagar</h1>
       <p>El total a pagar es $${precio} </p>

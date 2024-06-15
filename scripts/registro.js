@@ -1,3 +1,7 @@
+import guardarRegistro from "./funcionalidades/guardarRegistro.js"
+
+
+
 function registro() {
   const container = document.querySelector(`.container`);
   let template = ` <h1>Registro</h1>

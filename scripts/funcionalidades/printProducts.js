@@ -1,5 +1,6 @@
 /*INPRIME LOS PRODUCTOS,RECIBE 2 PARAMETROS ,EL ARRAY Y EL ID DE LA SECCION DONDE SE INSERTARA EL HTML */
-function printProducts(arrayOfProducts, id) {
+
+export default  function printProducts(arrayOfProducts, id) {
   let template = ``;
   const productsSelector = document.querySelector(`#${id}`);
   arrayOfProducts.forEach((item) => {

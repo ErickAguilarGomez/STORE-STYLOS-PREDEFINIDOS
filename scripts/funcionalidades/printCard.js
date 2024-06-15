@@ -1,7 +1,19 @@
-function printCards(arrayOfProducts, id) {
+import totalPrice from "./totalPrice.js";
+import SubTotalAndTotal from "./SubTotalAndTotal.js";
+import noRediccionamiento from "./Noredireccionamiento.js";
+
+
+
+
+
+
+export default  function printCards(arrayOfProducts, id) {
   let template = ``;
   const productsSelector = document.querySelector(`#${id}`);
-  arrayOfProducts.forEach((item) => {
+
+
+
+arrayOfProducts && arrayOfProducts.forEach((item) => {
     template += ` <a class="product-card" href="./details.html?id=${item.id}">
             <img
               class="product-img"

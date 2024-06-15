@@ -1,3 +1,8 @@
+import iniciarSesion from "./funcionalidades/validarSesion.js"
+import isOnline from "./funcionalidades/isOnline.js"
+import  logoutUser from "./funcionalidades/isOnline.js"
+
+
 function printLogin(palabra, id) {
   const container = document.querySelector(`.${id}`);
   let template = `<h1>${palabra} </h1>

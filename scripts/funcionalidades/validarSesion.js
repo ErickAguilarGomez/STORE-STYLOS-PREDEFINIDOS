@@ -1,4 +1,4 @@
-function iniciarSesion() {
+export default function iniciarSesion() {
   let user2 = {};
   document.querySelector("#email").addEventListener("input", (event) => {
     user2.email = event.target.value.toLowerCase();

@@ -1,4 +1,4 @@
-function isOnline(booleano, nombre) {
+ export default function isOnline(booleano, nombre) {
   const carrito = document.getElementById("cart"); // Este es un li con una imagen
   const micuenta = document.getElementById("micuenta");
   let loginContainer = document.querySelector("#login");

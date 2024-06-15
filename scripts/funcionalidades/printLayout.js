@@ -1,5 +1,7 @@
 /* IMPRIME EL NAVBAR ,HACIENDO UN RECORRORIDO DEL OBJETO OPTIONS */
-function printLayout() {
+import options from "./options.js";
+
+export default function printLayout() {
   let template = ``;
   const navbar = document.querySelector("#navbar");
   options.forEach((item) => {

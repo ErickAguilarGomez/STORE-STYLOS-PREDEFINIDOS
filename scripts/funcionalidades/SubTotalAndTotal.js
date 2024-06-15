@@ -1,5 +1,7 @@
 //DESPUES DE QUE LOS PRODUCTOS SEAN TRAIDOS AL CARRITO,SI EL USUARIO REALIZA VARIACIONES EN LAS CANTIDADES DE LOS PRODUCTO ,ESTA FUNCION MODIFICARA EL PRECIO,CASO CONTRARIO NO LO HARA
-function  SubTotalAndTotal(){
+import totalPrice from "./totalPrice.js";
+
+export default  function  SubTotalAndTotal(){
     const inputs = document.querySelectorAll(".quantity");
     inputs.forEach((input, index) => {
       input.addEventListener("input", () => {

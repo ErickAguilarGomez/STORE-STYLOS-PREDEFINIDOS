@@ -1,9 +1,28 @@
-/* IMPRIME LA HOJA DE DETALLE DEL PRODUCTO SELECCIONADO */
-function prinDetails(id) {
-  const product = products.find((item) => item.id == id);
+// IMPRIME LA HOJA DE DETALLE DEL PRODUCTO SELECCIONADO
+
+let productos2;
+
+async function fetchProductos() {
+  try {
+    const response = await fetch("../../productos/productos.json");
+    const data = await response.json();
+    productos2 = data.productos;
+  } catch (error) {
+    console.error("Error fetching productos:", error);
+  }
+}
+
+fetchProductos();
+
+
+
+export default  function printDetails(id) {
+
+  const product = productos2.find((item) => item.id == id);
+
   const details = document.querySelector("#details");
-  const price=document.querySelector("#price")
-  price.textContent="$"+product.price
+  const price = document.querySelector("#price");
+  price.textContent = "$" + product.price;
 
   let template = `<section class="product-images-block">
     <div class="product-images"> `;
@@ -58,5 +77,3 @@ function prinDetails(id) {
 
   details.innerHTML = template;
 }
-
-

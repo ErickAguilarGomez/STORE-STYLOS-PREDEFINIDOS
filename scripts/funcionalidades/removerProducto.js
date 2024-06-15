@@ -1,4 +1,4 @@
-function removerProducto() {
+export default  function removerProducto() {
   const tachoSelector = document.querySelectorAll(".tacho");
   tachoSelector.forEach((item) => {
     item.addEventListener("click", () => {

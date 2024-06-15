@@ -1,4 +1,4 @@
-function guardarRegistro() {
+export default function guardarRegistro() {
   let user = {};
   document.querySelector("#nombre").addEventListener("input", (event) => {
     user.nombre = event.target.value.toLowerCase();

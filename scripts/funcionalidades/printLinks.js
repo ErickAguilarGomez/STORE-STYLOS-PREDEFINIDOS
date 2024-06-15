@@ -1,5 +1,6 @@
-/*IMPRIME LAS REDES SOCIALES */
-function printLinks(){
+/*IMPRIME LAS REDES SOCIALES */ 
+
+export default function printLinks(){
     const social=document.querySelector(".header-social")
     let template=` <li id="facebook" class="header-li">
     <a class="header-a" href="https://facebook.com">

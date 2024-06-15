@@ -1,4 +1,4 @@
-function compraFinalizada() {
+export default function compraFinalizada() {
     const btnComprar = document.querySelector("#btn-pagar");
     btnComprar.addEventListener("click", ()=> {
         localStorage.clear();
