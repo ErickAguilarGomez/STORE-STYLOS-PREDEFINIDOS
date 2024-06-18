@@ -54,7 +54,7 @@ function runFunctions() {
   const getStateValue = JSON.parse(localStorage.getItem("usuario")) || [];
   isOnline(getStateValue.state, getStateValue.nombre);
 }
-console.log("hola")
+console.log("Camibos adiciones")
 // Llama a la función para cargar los productos y luego ejecutar las demás funciones
 fetchProducts();
 
